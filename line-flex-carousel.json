@@ -31,7 +31,7 @@
         "footer": { "type": "box", "layout": "horizontal", "spacing": "md", "paddingAll": "16px", "backgroundColor": "#189AA9",
           "contents": [
             { "type": "button", "style": "primary", "color": "#FFFFFF", "height": "sm", "action": { "type": "uri", "label": "官方網站", "uri": "https://YOUR-WCA-WEBSITE" } },
-            { "type": "button", "style": "secondary", "color": "#189AA9", "height": "sm", "action": { "type": "uri", "label": "個人 Line", "uri": "https://line.me/ti/p/~YOUR_LINE_ID" } }
+            { "type": "button", "style": "secondary", "color": "#189AA9", "height": "sm", "action": { "type": "uri", "label": "個人粉專", "uri": "https://www.facebook.com/YOUR-PAGE" } }
           ] }
       }
     ]
