@@ -1,0 +1,143 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "mega",
+      "hero": {
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-01.png",
+        "size": "full",
+        "aspectRatio": "27:35",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "https://www.yj-bio.com/"
+        }
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "paddingAll": "16px",
+        "backgroundColor": "#123172",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "https://www.yj-bio.com/"
+            }
+          },
+          {
+            "type": "button",
+            "style": "secondary",
+            "color": "#123172",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "官方 LinkedIn",
+              "uri": "https://www.linkedin.com/company/yj-biotech/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "mega",
+      "hero": {
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-02.png",
+        "size": "full",
+        "aspectRatio": "27:35",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "https://YOUR-ONZE-WEBSITE"
+        }
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "paddingAll": "16px",
+        "backgroundColor": "#123172",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "公司官網",
+              "uri": "https://YOUR-ONZE-WEBSITE"
+            }
+          },
+          {
+            "type": "button",
+            "style": "secondary",
+            "color": "#123172",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "LinkedIn",
+              "uri": "https://www.linkedin.com/in/chen68/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "mega",
+      "hero": {
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-03.png",
+        "size": "full",
+        "aspectRatio": "27:35",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "https://wca.tw/"
+        }
+      },
+      "footer": {
+        "type": "box",
+        "layout": "horizontal",
+        "spacing": "md",
+        "paddingAll": "16px",
+        "backgroundColor": "#189AA9",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#FFFFFF",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "https://wca.tw/"
+            }
+          },
+          {
+            "type": "button",
+            "style": "secondary",
+            "color": "#189AA9",
+            "height": "sm",
+            "action": {
+              "type": "uri",
+              "label": "個人粉專",
+              "uri": "https://www.facebook.com/onzemed/"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
