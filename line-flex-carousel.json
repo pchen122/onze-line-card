@@ -1,0 +1,39 @@
+{
+  "type": "flex",
+  "altText": "Eric Chen｜ONZE 弘澤國際 數位名片",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble", "size": "mega",
+        "hero": { "type": "image", "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-01.png", "size": "full", "aspectRatio": "27:35", "aspectMode": "cover",
+                  "action": { "type": "uri", "uri": "https://YOUR-YJ-WEBSITE" } },
+        "footer": { "type": "box", "layout": "horizontal", "spacing": "md", "paddingAll": "16px", "backgroundColor": "#123172",
+          "contents": [
+            { "type": "button", "style": "primary", "color": "#FFFFFF", "height": "sm", "action": { "type": "uri", "label": "官方網站", "uri": "https://YOUR-YJ-WEBSITE" } },
+            { "type": "button", "style": "secondary", "color": "#123172", "height": "sm", "action": { "type": "uri", "label": "官方 LinkedIn", "uri": "https://www.linkedin.com/company/YOUR-YJ" } }
+          ] }
+      },
+      {
+        "type": "bubble", "size": "mega",
+        "hero": { "type": "image", "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-02.png", "size": "full", "aspectRatio": "27:35", "aspectMode": "cover",
+                  "action": { "type": "uri", "uri": "https://YOUR-ONZE-WEBSITE" } },
+        "footer": { "type": "box", "layout": "horizontal", "spacing": "md", "paddingAll": "16px", "backgroundColor": "#123172",
+          "contents": [
+            { "type": "button", "style": "primary", "color": "#FFFFFF", "height": "sm", "action": { "type": "uri", "label": "公司官網", "uri": "https://YOUR-ONZE-WEBSITE" } },
+            { "type": "button", "style": "secondary", "color": "#123172", "height": "sm", "action": { "type": "uri", "label": "LinkedIn", "uri": "https://www.linkedin.com/in/YOUR-ERIC" } }
+          ] }
+      },
+      {
+        "type": "bubble", "size": "mega",
+        "hero": { "type": "image", "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-03.png", "size": "full", "aspectRatio": "27:35", "aspectMode": "cover",
+                  "action": { "type": "uri", "uri": "https://YOUR-WCA-WEBSITE" } },
+        "footer": { "type": "box", "layout": "horizontal", "spacing": "md", "paddingAll": "16px", "backgroundColor": "#189AA9",
+          "contents": [
+            { "type": "button", "style": "primary", "color": "#FFFFFF", "height": "sm", "action": { "type": "uri", "label": "官方網站", "uri": "https://YOUR-WCA-WEBSITE" } },
+            { "type": "button", "style": "secondary", "color": "#189AA9", "height": "sm", "action": { "type": "uri", "label": "個人 Line", "uri": "https://line.me/ti/p/~YOUR_LINE_ID" } }
+          ] }
+      }
+    ]
+  }
+}
