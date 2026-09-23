@@ -1,7 +1,17 @@
-ONZE 三張式 LINE 數位名片
+陳帛承 Eric Chen — 數位名片
 
-【分享網址】在 LINE 裡打開這一條：
+═══ A. 網頁名片（主力，最穩定）═══
+https://pchen122.github.io/onze-line-card/
+
+  傳給任何人都能開：LINE、FB、Email、簡訊、QR Code 都行。
+  頁面內建：橫滑三張卡、分享、複製網址、QR Code、存進通訊錄（vCard）。
+
+═══ B. LINE 原生卡片（在 LINE 裡一鍵轉傳）═══
 https://liff.line.me/1654437282-A1Bj7p4a?template=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BjaGVuMTIyL29uemUtbGluZS1jYXJkL21haW4vb256ZS1jYXJkLnR4dA
 
-【樣板檔】（改內容就改這個檔，網址不用換）
-https://raw.githubusercontent.com/pchen122/onze-line-card/main/onze-card.txt
+  目前借用第三方 LIFF。之後換成自己的 LIFF ID 後，只要把網址中
+  1654437282-A1Bj7p4a 換成自己的 ID 即可。
+
+═══ 維護 ═══
+倉庫：https://github.com/pchen122/onze-line-card
+改圖或改連結 → 覆蓋同名檔案 → push，上面兩條網址都不用換。
