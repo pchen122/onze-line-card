@@ -1,0 +1,7 @@
+ONZE 三張式 LINE 數位名片
+
+【分享網址】在 LINE 裡打開這一條：
+https://liff.line.me/1654437282-A1Bj7p4a?template=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BjaGVuMTIyL29uemUtbGluZS1jYXJkL21haW4vb256ZS1jYXJkLnR4dA
+
+【樣板檔】（改內容就改這個檔，網址不用換）
+https://raw.githubusercontent.com/pchen122/onze-line-card/main/onze-card.txt
