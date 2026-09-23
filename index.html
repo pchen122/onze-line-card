@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>陳帛承 Eric Chen｜數位名片</title>
+<meta name="description" content="陳帛承 Eric Chen — 亞家生技 執行副總／弘澤國際 創辦人暨執行長／WCA 白袍加速器 策略長">
+<meta property="og:title" content="陳帛承 Eric Chen｜數位名片">
+<meta property="og:description" content="亞家生技 執行副總／弘澤國際 創辦人暨執行長／WCA 白袍加速器 策略長">
+<meta property="og:image" content="https://pchen122.github.io/onze-line-card/line-hero-02.png">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#123172">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23123172'/><text x='16' y='22' font-size='16' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#123172; --teal:#189AA9; --blue:#0087C8; --ink:#0A1230; }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;background:var(--ink);color:#fff;
+       min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:24px 0 40px}
+
+  header{text-align:center;padding:8px 16px 20px}
+  header .n{font-size:26px;font-weight:700;letter-spacing:.04em}
+  header .s{font-size:14px;font-weight:400;opacity:.62;margin-top:6px;letter-spacing:.06em}
+
+  /* 橫滑軌道 */
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+        width:100%;padding:4px 16px 18px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .card{flex:0 0 min(78vw,330px);scroll-snap-align:center;border-radius:20px;overflow:hidden;
+        background:#fff;box-shadow:0 18px 46px -18px rgba(0,0,0,.65)}
+  .card img{width:100%;display:block}
+  .btns{display:flex;gap:10px;padding:12px}
+  .btn{flex:1;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+       font-size:15px;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:opacity .15s}
+  .btn:active{opacity:.7}
+  .c1 .btns{background:var(--teal)} .c2 .btns{background:var(--navy)} .c3 .btns{background:#fff}
+  .c1 .f{background:#fff;color:var(--teal)}   .c1 .o{border:2px solid #fff;color:#fff}
+  .c2 .f{background:#fff;color:var(--navy)}   .c2 .o{border:2px solid #fff;color:#fff}
+  .c3 .f{background:var(--navy);color:#fff}   .c3 .o{border:2px solid var(--navy);color:var(--navy)}
+  .btn.off{opacity:.38;pointer-events:none}
+
+  .dots{display:flex;gap:8px;justify-content:center;margin:2px 0 26px}
+  .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28);transition:all .2s}
+  .dots i.on{background:var(--teal);width:20px;border-radius:4px}
+
+  .acts{width:min(100%,362px);padding:0 16px;display:flex;flex-direction:column;gap:10px}
+  .act{height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:9px;
+       font-size:16px;font-weight:500;text-decoration:none;color:#fff;border:1.5px solid rgba(255,255,255,.26);
+       background:rgba(255,255,255,.05);cursor:pointer;font-family:inherit;letter-spacing:.04em}
+  .act.p{background:var(--teal);border-color:var(--teal)}
+  .act:active{transform:scale(.99)}
+  .act svg{width:19px;height:19px;flex:none}
+
+  .qr{margin:26px auto 0;text-align:center;display:none}
+  .qr.show{display:block}
+  .qr img{width:190px;height:190px;background:#fff;padding:10px;border-radius:14px}
+  .qr p{font-size:12px;opacity:.55;margin-top:10px}
+
+  footer{margin-top:30px;font-size:11.5px;opacity:.36;text-align:center;line-height:1.7;padding:0 20px}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:#fff;color:var(--ink);
+         padding:11px 20px;border-radius:999px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;
+         transition:all .25s;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="n">陳帛承　Eric Chen</div>
+  <div class="s">左右滑動瀏覽三張名片</div>
+</header>
+
+<div class="rail" id="rail">
+  <div class="card c1">
+    <img src="line-hero-01.png" alt="亞家生技 執行副總 陳帛承">
+    <div class="btns">
+      <a class="btn f" href="https://www.yj-bio.com/" target="_blank" rel="noopener">官方網站</a>
+      <a class="btn o" href="https://www.linkedin.com/company/yj-biotech/" target="_blank" rel="noopener">官方 LinkedIn</a>
+    </div>
+  </div>
+  <div class="card c2">
+    <img src="line-hero-02.png" alt="弘澤國際有限公司 創辦人暨執行長 陳帛承">
+    <div class="btns">
+      <a class="btn f off" href="#" aria-disabled="true">公司官網</a>
+      <a class="btn o" href="https://www.linkedin.com/in/chen68/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="card c3">
+    <img src="line-hero-03.png" alt="WCA 白袍加速器 策略長 陳帛承">
+    <div class="btns">
+      <a class="btn f" href="https://wca.tw/" target="_blank" rel="noopener">官方網站</a>
+      <a class="btn o" href="https://www.facebook.com/onzemed/" target="_blank" rel="noopener">個人粉專</a>
+    </div>
+  </div>
+</div>
+
+<div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
+
+<div class="acts">
+  <button class="act p" id="share">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    分享這張名片
+  </button>
+  <button class="act" id="copy">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+    複製名片網址
+  </button>
+  <button class="act" id="qrbtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM19 19h2v2h-2z" stroke-linecap="round"/></svg>
+    顯示 QR Code
+  </button>
+  <a class="act" id="vcf" download="Eric-Chen.vcf">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/></svg>
+    存進手機通訊錄
+  </a>
+</div>
+
+<div class="qr" id="qr">
+  <img id="qrimg" alt="名片 QR Code">
+  <p>請對方掃描即可開啟這張名片</p>
+</div>
+
+<footer>
+  亞家生技 YJ. Biotechnology Co., Ltd.<br>
+  弘澤國際有限公司 ONZE Global Co., Ltd.<br>
+  WCA 白袍加速器 White Coat Accelerator
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const U = location.href.split('#')[0].split('?')[0];
+  const toast = (t) => { const e=document.getElementById('toast'); e.textContent=t; e.classList.add('on'); setTimeout(()=>e.classList.remove('on'),1900); };
+
+  // 分頁圓點
+  const rail = document.getElementById('rail'), dots = [...document.querySelectorAll('#dots i')];
+  rail.addEventListener('scroll', () => {
+    const i = Math.round(rail.scrollLeft / (rail.scrollWidth / 3));
+    dots.forEach((d,k)=>d.classList.toggle('on', k===Math.min(i,2)));
+  }, {passive:true});
+
+  // 分享
+  document.getElementById('share').onclick = async () => {
+    const data = { title:'陳帛承 Eric Chen｜數位名片', text:'這是我的數位名片', url:U };
+    if (navigator.share) { try { await navigator.share(data); return; } catch(e){ if(e.name==='AbortError') return; } }
+    try { await navigator.clipboard.writeText(U); toast('已複製網址，貼給對方即可'); }
+    catch { toast(U); }
+  };
+
+  // 複製
+  document.getElementById('copy').onclick = async () => {
+    try { await navigator.clipboard.writeText(U); toast('已複製名片網址'); }
+    catch { const t=document.createElement('textarea'); t.value=U; document.body.appendChild(t); t.select();
+            document.execCommand('copy'); t.remove(); toast('已複製名片網址'); }
+  };
+
+  // QR
+  document.getElementById('qrbtn').onclick = () => {
+    const box = document.getElementById('qr'), img = document.getElementById('qrimg');
+    if (!img.src) img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=0&data=' + encodeURIComponent(U);
+    box.classList.toggle('show');
+    if (box.classList.contains('show')) box.scrollIntoView({behavior:'smooth', block:'center'});
+  };
+
+  // vCard
+  const vcf = ["BEGIN:VCARD","VERSION:3.0","N:陳;帛承;;;","FN:陳帛承 Eric Chen",
+    "ORG:弘澤國際有限公司 ONZE Global Co., Ltd.","TITLE:創辦人暨執行長 Founder & CEO",
+    "URL:https://wca.tw/","URL:https://www.yj-bio.com/",
+    "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/chen68/",
+    "NOTE:亞家生技 執行副總／弘澤國際 創辦人暨執行長／WCA 白袍加速器 策略長",
+    "URL:"+U,"END:VCARD"].join("\r\n");
+  document.getElementById('vcf').href = URL.createObjectURL(new Blob([vcf], {type:'text/vcard;charset=utf-8'}));
+</script>
+</body>
+</html>
