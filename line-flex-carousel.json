@@ -95,15 +95,13 @@
               "justifyContent": "center",
               "contents": [
                 {
-                  "type": "button",
-                  "style": "link",
-                  "height": "sm",
+                  "type": "text",
+                  "text": "官網 Coming soon",
+                  "size": "xs",
+                  "weight": "regular",
                   "color": "#123172",
-                  "action": {
-                    "type": "uri",
-                    "label": "公司官網",
-                    "uri": "https://YOUR-ONZE-WEBSITE"
-                  }
+                  "align": "center",
+                  "gravity": "center"
                 }
               ]
             },
