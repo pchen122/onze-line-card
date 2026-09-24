@@ -1,20 +1,19 @@
 陳帛承 Eric Chen — 數位名片
 
-═══ A. 網頁名片（主力，任何人都能開）═══
+═══ A. 網頁名片（任何人、任何平台都能開）═══
 https://pchen122.github.io/onze-line-card/
 
   LINE、FB、Email、簡訊、QR Code 都能傳。
-  頁面內建：橫滑三張卡、分享、複製網址、QR Code、存進通訊錄（vCard）。
+  內建：橫滑三張卡、分享、複製網址、QR Code、存進通訊錄（vCard）。
 
 ═══ B. LINE 原生卡片（在 LINE 裡一鍵轉傳給好友）═══
-https://liff.line.me/2011717870-uxRliit6?template=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BjaGVuMTIyL29uemUtbGluZS1jYXJkL21haW4vb256ZS1jYXJkLnR4dA
+https://liff.line.me/2011717870-uxRliit6
 
-  使用自己的 LIFF ID：2011717870-uxRliit6
-  在 LINE 裡打開 → 分享好友／直接傳送／複製網址
+  LIFF ID：2011717870-uxRliit6（你自己的）
+  Endpoint URL 必須設為：https://pchen122.github.io/onze-line-card/share.html
 
-  （舊的第三方版本，備用）
-  https://liff.line.me/1654437282-A1Bj7p4a?template=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BjaGVuMTIyL29uemUtbGluZS1jYXJkL21haW4vb256ZS1jYXJkLnR4dA
+  在 LINE 裡打開 → 分享給好友／傳到目前聊天室／複製名片網址
 
 ═══ 維護 ═══
 倉庫：https://github.com/pchen122/onze-line-card
-改圖或改連結 → 覆蓋同名檔案 → push，上面網址都不用換。
+改圖或改連結 → 覆蓋同名檔案 → push，上面兩條網址都不用換。

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>分享數位名片｜陳帛承 Eric Chen</title>
+<meta name="theme-color" content="#123172">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<style>
+  :root{ --navy:#123172; --teal:#189AA9; --ink:#0A1230; }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;background:var(--ink);color:#fff;
+       min-height:100dvh;padding:26px 0 44px;display:flex;flex-direction:column;align-items:center}
+  h1{font-size:19px;font-weight:700;letter-spacing:.05em;text-align:center}
+  .sub{font-size:13px;opacity:.6;margin-top:6px;text-align:center;padding:0 20px}
+
+  .acts{width:min(100%,370px);padding:22px 18px 0;display:flex;flex-direction:column;gap:11px}
+  .act{height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:9px;
+       font-size:16px;font-weight:500;letter-spacing:.04em;font-family:inherit;cursor:pointer;
+       border:1.5px solid rgba(255,255,255,.26);background:rgba(255,255,255,.05);color:#fff;text-decoration:none}
+  .act.p{background:#06C755;border-color:#06C755}
+  .act.s{background:var(--teal);border-color:var(--teal)}
+  .act:active{transform:scale(.99)}
+  .act[disabled]{opacity:.35;pointer-events:none}
+  .act svg{width:19px;height:19px;flex:none}
+  .hint{font-size:12px;opacity:.5;text-align:center;margin-top:-4px;line-height:1.6}
+
+  .rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;padding:24px 18px 10px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .rail img{flex:0 0 min(70vw,290px);scroll-snap-align:center;border-radius:16px;display:block;
+            box-shadow:0 16px 40px -16px rgba(0,0,0,.7)}
+
+  .state{margin:28px 18px 0;font-size:13px;line-height:1.7;opacity:.62;text-align:center;max-width:370px}
+  .state.err{opacity:1;color:#FFB4A8}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:#fff;color:var(--ink);
+         padding:11px 20px;border-radius:999px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;
+         transition:all .25s;box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:86vw;text-align:center}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<h1>分享我的數位名片</h1>
+<div class="sub">三張卡片一次送出，對方可再轉傳</div>
+
+<div class="acts">
+  <button class="act p" id="pick" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    分享給好友
+  </button>
+  <button class="act s" id="send" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+    傳到目前聊天室
+  </button>
+  <button class="act" id="copy">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+    複製名片網址
+  </button>
+  <a class="act" href="./" id="web">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>
+    開啟網頁版名片
+  </a>
+  <div class="hint" id="hint"></div>
+</div>
+
+<div class="rail">
+  <img src="line-hero-01.png" alt="亞家生技">
+  <img src="line-hero-02.png" alt="弘澤國際">
+  <img src="line-hero-03.png" alt="WCA 白袍加速器">
+</div>
+
+<div class="state" id="state">初始化中…</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const LIFF_ID = '2011717870-uxRliit6';
+const CARD_URL = './onze-card.txt';
+const SHARE_URL = location.href.split('?')[0];
+
+const $ = id => document.getElementById(id);
+const toast = t => { const e=$('toast'); e.textContent=t; e.classList.add('on'); setTimeout(()=>e.classList.remove('on'),2200); };
+const state = (t, err) => { const e=$('state'); e.textContent=t; e.classList.toggle('err', !!err); };
+
+let MSG = null;
+
+// 取名片訊息
+async function loadCard(){
+  const r = await fetch(CARD_URL, {cache:'no-cache'});
+  if (!r.ok) throw new Error('名片樣板讀取失敗 ' + r.status);
+  const m = await r.json();
+  if (m.type !== 'flex') throw new Error('名片樣板格式錯誤');
+  return m;
+}
+
+// 複製（任何環境都可用）
+$('copy').onclick = async () => {
+  try { await navigator.clipboard.writeText(SHARE_URL); toast('已複製名片網址'); }
+  catch { const t=document.createElement('textarea'); t.value=SHARE_URL; document.body.appendChild(t);
+          t.select(); document.execCommand('copy'); t.remove(); toast('已複製名片網址'); }
+};
+
+(async () => {
+  try { MSG = await loadCard(); }
+  catch (e) { state(e.message, true); return; }
+
+  if (typeof liff === 'undefined') { state('請在 LINE 中開啟此頁面，才能直接分享給好友。'); return; }
+
+  try {
+    await liff.init({ liffId: LIFF_ID });
+  } catch (e) {
+    state('LIFF 初始化失敗：' + (e.message || e) + '\n仍可使用「複製名片網址」。', true);
+    return;
+  }
+
+  if (!liff.isLoggedIn() && !liff.isInClient()) {
+    state('尚未登入 LINE。');
+    $('hint').innerHTML = '<a href="#" id="lg" style="color:#06C755">點此登入 LINE</a>';
+    $('lg').onclick = e => { e.preventDefault(); liff.login({ redirectUri: SHARE_URL }); };
+    return;
+  }
+
+  const canPick = liff.isApiAvailable('shareTargetPicker');
+  $('pick').disabled = !canPick;
+  $('send').disabled = !(liff.isInClient() && ['utou','room','group'].includes(liff.getContext()?.type));
+
+  if (!canPick) $('hint').textContent = '此環境不支援選擇好友，請改用「複製名片網址」。';
+  else if ($('send').disabled) $('hint').textContent = '「傳到目前聊天室」需從聊天室內開啟本頁才可使用。';
+  state('準備完成，可以分享了。');
+
+  $('pick').onclick = async () => {
+    try {
+      const res = await liff.shareTargetPicker([MSG], { isMultiple: true });
+      toast(res ? '名片已送出' : '已取消');
+    } catch (e) { toast('分享失敗：' + (e.message || e)); }
+  };
+
+  $('send').onclick = async () => {
+    try { await liff.sendMessages([MSG]); toast('已傳送到聊天室'); if (liff.isInClient()) setTimeout(()=>liff.closeWindow(), 900); }
+    catch (e) { toast('傳送失敗：' + (e.message || e)); }
+  };
+})();
+</script>
+</body>
+</html>
