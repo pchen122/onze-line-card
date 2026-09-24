@@ -8,7 +8,7 @@
         "type": "image",
         "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-01.png",
         "size": "full",
-        "aspectRatio": "27:35",
+        "aspectRatio": "27:28",
         "aspectMode": "cover"
       },
       "footer": {
@@ -71,7 +71,7 @@
         "type": "image",
         "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-02.png",
         "size": "full",
-        "aspectRatio": "27:35",
+        "aspectRatio": "27:28",
         "aspectMode": "cover"
       },
       "footer": {
@@ -134,7 +134,7 @@
         "type": "image",
         "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-03.png",
         "size": "full",
-        "aspectRatio": "27:35",
+        "aspectRatio": "27:28",
         "aspectMode": "cover"
       },
       "footer": {
