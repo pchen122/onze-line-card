@@ -9,24 +9,25 @@
         "size": "mega",
         "hero": {
           "type": "image",
-          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-01.png",
+          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/card-hero-01.png",
           "size": "full",
           "aspectRatio": "27:28",
-          "aspectMode": "cover"
+          "aspectMode": "fit",
+          "backgroundColor": "#189AA9"
         },
         "footer": {
           "type": "box",
           "layout": "horizontal",
-          "spacing": "md",
-          "paddingAll": "14px",
+          "spacing": "sm",
+          "paddingAll": "10px",
           "backgroundColor": "#189AA9",
           "contents": [
             {
               "type": "box",
               "layout": "vertical",
               "backgroundColor": "#FFFFFF",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
@@ -47,8 +48,8 @@
               "layout": "vertical",
               "borderWidth": "2px",
               "borderColor": "#FFFFFF",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
@@ -72,24 +73,25 @@
         "size": "mega",
         "hero": {
           "type": "image",
-          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-02.png",
+          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/card-hero-02.png",
           "size": "full",
           "aspectRatio": "27:28",
-          "aspectMode": "cover"
+          "aspectMode": "fit",
+          "backgroundColor": "#123172"
         },
         "footer": {
           "type": "box",
           "layout": "horizontal",
-          "spacing": "md",
-          "paddingAll": "14px",
+          "spacing": "sm",
+          "paddingAll": "10px",
           "backgroundColor": "#123172",
           "contents": [
             {
               "type": "box",
               "layout": "vertical",
               "backgroundColor": "#FFFFFF",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
@@ -110,8 +112,8 @@
               "layout": "vertical",
               "borderWidth": "2px",
               "borderColor": "#FFFFFF",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
@@ -135,24 +137,25 @@
         "size": "mega",
         "hero": {
           "type": "image",
-          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/line-hero-03.png",
+          "url": "https://raw.githubusercontent.com/pchen122/onze-line-card/main/card-hero-03.png",
           "size": "full",
           "aspectRatio": "27:28",
-          "aspectMode": "cover"
+          "aspectMode": "fit",
+          "backgroundColor": "#FFFFFF"
         },
         "footer": {
           "type": "box",
           "layout": "horizontal",
-          "spacing": "md",
-          "paddingAll": "14px",
+          "spacing": "sm",
+          "paddingAll": "10px",
           "backgroundColor": "#FFFFFF",
           "contents": [
             {
               "type": "box",
               "layout": "vertical",
               "backgroundColor": "#123172",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
@@ -173,8 +176,8 @@
               "layout": "vertical",
               "borderWidth": "2px",
               "borderColor": "#123172",
-              "cornerRadius": "8px",
-              "height": "46px",
+              "cornerRadius": "6px",
+              "height": "38px",
               "justifyContent": "center",
               "contents": [
                 {
